@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head th:replace="~{base :: head}"></head>
+<head th:replace="~{base :: head}">
+	<meta charset="utf-8">
+</head>
 <body>
 	<div th:replace="~{base :: logo}"></div>
 	<div class="container">
@@ -27,8 +29,8 @@
 					<div>Editora: <span th:text="${livro.editora}">Arqueirox</span></div>
 					<div>Acabamento: <span th:text="${livro.acabamento}">capa durax</span></div><!--capa dura ou broxura -->
 					<div>Autor: <span th:text="${livro.autor}">Patrickx</span></div>
-					<div>Classificação: <span th:text="${livro.classificacao}">Ficção, Fantasia</span></div>
-					<div>Saga: <span th:text="${livro.saga}">A Crônica do Matador do Rei – Livro 1x</span></div>
+					<div>ClassificaÃ§Ã£o: <span th:text="${livro.classificacao}">FicÃ§Ã£o, Fantasia</span></div>
+					<div>Saga: <span th:text="${livro.saga}">A CrÃ´nica do Matador do Rei â€“ Livro 1x</span></div>
 					
 					<div class="row">
 						<!-- usar logos para links -->

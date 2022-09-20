@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head th:replace="~{base :: head}"></head>
+<head th:replace="~{base :: head}">
+	<meta charset="utf-8">
+</head>
 
 <body>
 	<div th:replace="~{base :: logo}"></div>
@@ -28,20 +30,20 @@
 					<div th:errors="*{autor}" class="invalid-feedback">Erros do autor</div>
 				</div>
 				<div class="row m-3">
-					<label for=numPaginas>Num de Páginas</label>
-					<input th:field="*{numPaginas}" class="form-control" th:errorclass="is-invalid" placeholder="Numero de Páginas"/>		<!-- integer -->
-					<small>Informe o Numero de Páginas</small>
+					<label for=numPaginas>Num de PÃ¡ginas</label>
+					<input th:field="*{numPaginas}" class="form-control" th:errorclass="is-invalid" placeholder="Numero de PÃ¡ginas"/>		<!-- integer -->
+					<small>Informe o Numero de PÃ¡ginas</small>
 					<div th:errors="*{numPaginas}" class="invalid-feedback">Erros do numero de paginas</div>
 				</div>
 				<div class="row m-3">
-					<label for=anoPublicacao>Ano de Publicação</label>
-					<input th:field="*{anoPublicacao}" class="form-control" placeholder="Ano de Publicação"/>
-					<small>Informe o Ano de Publicação</small>
+					<label for=anoPublicacao>Ano de PublicaÃ§Ã£o</label>
+					<input th:field="*{anoPublicacao}" class="form-control" placeholder="Ano de PublicaÃ§Ã£o"/>
+					<small>Informe o Ano de PublicaÃ§Ã£o</small>
 				</div>
 				<div class="row m-3">
 					<label for=acabamento>Acabamento</label>
 					<input th:field="*{acabamento}" class="form-control" placeholder="Tipo de Acabamento"/>
-					<small>Informe se é capa dura, brochura, etc</small>
+					<small>Informe se Ã© capa dura, brochura, etc</small>
 				</div>
 				<div class="row m-3">
 					<label for=isbn>isbn</label>
@@ -49,14 +51,14 @@
 					<small>Informe o ISBN com 13 digitos</small>
 				</div>
 				<div class="row m-3">
-					<label for=classificacao>classificação</label>
-					<input th:field="*{classificacao}" class="form-control" placeholder="classificação"/>
-					<small>Informe as classificações. Ex: Ficção, Fantasia </small>
+					<label for=classificacao>classificaÃ§Ã£o</label>
+					<input th:field="*{classificacao}" class="form-control" placeholder="classificaÃ§Ã£o"/>
+					<small>Informe as classificaÃ§Ãµes. Ex: FicÃ§Ã£o, Fantasia </small>
 				</div>
 				<div class="row m-3">
 					<label for=saga>saga</label>
 					<input th:field="*{saga}" class="form-control" placeholder="saga"/>
-					<small>Informe a saga que o livro pertence. Ex: "A Crônica do Matador do Rei – Livro 1"</small>
+					<small>Informe a saga que o livro pertence. Ex: "A CrÃ´nica do Matador do Rei â€“ Livro 1"</small>
 				</div>
 				<div class="row m-3">
 					<label for=imagemCapa>imagem da Capa</label>
