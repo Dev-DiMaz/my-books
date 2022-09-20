@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="~{base :: head}"></head>
+<body>
+	<div th:replace="~{base :: logo}"></div>
+	<div class="container">
+		<div th:replace="~{base :: titulo('Meus Livros')}"></div>
+		
+		<nav class="navbar navbar-expand-lg bg-light d-flex justify-content-between">
+		    <div class="navbar-nav">
+				<a class="nav-link active" href="">Todos</a>
+				<a class="nav-link" href="">Quero</a>
+				<a class="nav-link" href="">Tenho</a>
+				<a class="nav-link" href="">Desisti</a>
+			</div>
+			<a href="/livro/formulario"><button class="btn btn-outline-secondary my-2 my-sm-0">Novo</button></a>
+		</nav>
+		<div class="card mb-3" th:each="livro : ${livros}">
+			<div class="card-header" th:text="${livro.nomeLivro}">O Nome do Vento</div>
+			<div class="card-body">
+				<div class="row">
+				<div class="col-12 col-sm-8 mb-3">
+					<div>ISBN: <span th:text="${livro.isbn}">9786555651850x</span></div>
+					<div>Ano: <span th:text="${livro.anoPublicacao}">2021x</span></div>
+					
+					<div>Paginas: <span th:text="${livro.numPaginas}">768x</span></div>
+					<div>Editora: <span th:text="${livro.editora}">Arqueirox</span></div>
+					<div>Acabamento: <span th:text="${livro.acabamento}">capa durax</span></div><!--capa dura ou broxura -->
+					<div>Autor: <span th:text="${livro.autor}">Patrickx</span></div>
+					<div>Classificação: <span th:text="${livro.classificacao}">Ficção, Fantasia</span></div>
+					<div>Saga: <span th:text="${livro.saga}">A Crônica do Matador do Rei – Livro 1x</span></div>
+					
+					<div class="row">
+						<!-- usar logos para links -->
+						<div class="col-3">
+							<a th:href="${livro.linkAmazon}">Amazon</a>
+						</div>
+						<div class="col-3">
+							<a th:href="${livro.linkSub}">Sub</a>
+						</div>
+						<div class="col-3">
+							<a th:href="${livro.linkAmericanas}">Ame</a>
+						</div>
+						<div class="col-3">
+							<a th:href="${livro.linkMagalu}">Magalu</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-12 col-sm-4 ">
+					<div>
+						<img class="img-thumbnail" th:src="${livro.imagemCapa}" src=""/>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

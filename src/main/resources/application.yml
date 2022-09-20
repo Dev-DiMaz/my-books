@@ -1,0 +1,33 @@
+#server:
+#    port: ${PORT:5000}
+#    servlet: 
+#        context-path: /
+      
+spring: 
+    datasource:
+        url: jdbc:postgresql://ec2-44-206-137-96.compute-1.amazonaws.com:5432/d67i6l1evod7cj?sslmode=require
+        username: mlktwmyjeugxyc
+        password: 81ef7389eaf53a88ac672959156644a6e98e9cb7a564c0369e235c13b3176601
+        driver-class-name: org.postgresql.Driver
+
+        tomcat:
+            initial-size: 2 
+      
+
+    jpa:
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+        show-sql: false
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                temp:    
+                    use_jdbc_metadata_defaults: false
+            
+    servlet:
+        multipart:
+            enabled: true
+            file-size-threshold: 2KB
+            max-request-size: 215MB
+            max-file-size: 200MB
+    

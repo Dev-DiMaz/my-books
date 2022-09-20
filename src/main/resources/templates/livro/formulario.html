@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="~{base :: head}"></head>
+
+<body>
+	<div th:replace="~{base :: logo}"></div>
+	<div class="container">
+		<div th:replace="~{base :: titulo('Novo Livro')}"></div>
+		
+		<div class="card mt-3">
+			<form th:object="${novoLivroDTO}" class="card-body" action="/livro/novo" method="POST">
+				<div class="row m-3">
+					<label for=nomeLivro>Livro</label>
+					<input th:field="*{nomeLivro}" class="form-control" th:errorclass="is-invalid" placeholder="Nome do Livro"/>
+					<small>Informe o nome do Livro</small>
+					<div th:errors="*{nomeLivro}" class="invalid-feedback">Erros do nome do produto</div>
+				</div>
+				<div class="row m-3">
+					<label for=editora>Editora</label>
+					<input th:field="*{editora}" class="form-control" th:errorclass="is-invalid" placeholder="Editora"/>
+					<small>Informe o nome da Editora</small>
+					<div th:errors="*{editora}" class="invalid-feedback">Erros da editora</div>
+				</div>
+				<div class="row m-3">
+					<label for=autor>Autor</label>
+					<input th:field="*{autor}" class="form-control" th:errorclass="is-invalid" placeholder="Autor"/>
+					<small>Informe o nome do Autor</small>
+					<div th:errors="*{autor}" class="invalid-feedback">Erros do autor</div>
+				</div>
+				<div class="row m-3">
+					<label for=numPaginas>Num de Páginas</label>
+					<input th:field="*{numPaginas}" class="form-control" th:errorclass="is-invalid" placeholder="Numero de Páginas"/>		<!-- integer -->
+					<small>Informe o Numero de Páginas</small>
+					<div th:errors="*{numPaginas}" class="invalid-feedback">Erros do numero de paginas</div>
+				</div>
+				<div class="row m-3">
+					<label for=anoPublicacao>Ano de Publicação</label>
+					<input th:field="*{anoPublicacao}" class="form-control" placeholder="Ano de Publicação"/>
+					<small>Informe o Ano de Publicação</small>
+				</div>
+				<div class="row m-3">
+					<label for=acabamento>Acabamento</label>
+					<input th:field="*{acabamento}" class="form-control" placeholder="Tipo de Acabamento"/>
+					<small>Informe se é capa dura, brochura, etc</small>
+				</div>
+				<div class="row m-3">
+					<label for=isbn>isbn</label>
+					<input th:field="*{isbn}" class="form-control" placeholder="isbn-13"/>
+					<small>Informe o ISBN com 13 digitos</small>
+				</div>
+				<div class="row m-3">
+					<label for=classificacao>classificação</label>
+					<input th:field="*{classificacao}" class="form-control" placeholder="classificação"/>
+					<small>Informe as classificações. Ex: Ficção, Fantasia </small>
+				</div>
+				<div class="row m-3">
+					<label for=saga>saga</label>
+					<input th:field="*{saga}" class="form-control" placeholder="saga"/>
+					<small>Informe a saga que o livro pertence. Ex: "A Crônica do Matador do Rei – Livro 1"</small>
+				</div>
+				<div class="row m-3">
+					<label for=imagemCapa>imagem da Capa</label>
+					<input th:field="*{imagemCapa}" class="form-control" placeholder="URL Imagem da Capa"/>
+					<small>Informe a Url de uma imagem da capa</small>
+				</div>
+			
+				<button class="btn btn-primary" type="submit">Cadastrar</button>
+			</form>
+		</div>
+		
+	</div>
+</head>
+<body>
+
+</body>
+</html>
